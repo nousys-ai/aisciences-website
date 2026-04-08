@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AISciences.ai — Coming Soon</title>
+  <meta name="description" content="AISciences.ai — Something new is on the way.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0c;
+      --fg: #e8e6e1;
+      --accent: #c4a46c;
+      --muted: #5a5750;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* subtle radial glow */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,164,108,0.06) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+      animation: fadeUp 1.2s ease-out both;
+    }
+
+    .brand {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin-bottom: 2.5rem;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .coming-soon {
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      position: relative;
+      display: inline-block;
+    }
+
+    .coming-soon::before,
+    .coming-soon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 1px;
+      background: var(--muted);
+      opacity: 0.4;
+    }
+
+    .coming-soon::before { right: calc(100% + 16px); }
+    .coming-soon::after  { left:  calc(100% + 16px); }
+
+    /* dot pulse */
+    .dots { display: inline-block; width: 1.6em; text-align: left; }
+    .dots::after {
+      content: '';
+      animation: dots 1.8s steps(4, end) infinite;
+    }
+
+    @keyframes dots {
+      0%  { content: ''; }
+      25% { content: '.'; }
+      50% { content: '..'; }
+      75% { content: '...'; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand">AI<span>Sciences</span>.ai</h1>
+    <p class="coming-soon">Coming Soon<span class="dots"></span></p>
+  </div>
+</body>
+</html>
